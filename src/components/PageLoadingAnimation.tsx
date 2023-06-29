@@ -55,14 +55,13 @@ const childObject = {
 export default function PageLoadingAnimation({ setLoading }: Props) {
   return (
     <motion.div
-      className="flex items-center fixed h-screen w-screen gap-2 justify-center top-0 left-0 "
+      className="relative flex items-center h-screen w-screen gap-2 before:absolute before:opacity-30 before:pointer-events-none before:inset-0 before:z-0  before:bg-[radial-gradient(circle_farthest-side_at_100px_100px,_#B12E82_0%,_transparent_100%)] justify-center top-0 left-0 "
       variants={parentObject}
       initial="hidden"
       exit="exit"
       onAnimationComplete={() => setLoading(false)}
       animate="visible"
     >
-      <motion.div variants={childObject} className="h-7 w-7 bg-orange-500 rounded-full" />
       <motion.h1 variants={childObject} className="text-5xl font-bold gap-2 ">
         Hello
       </motion.h1>
