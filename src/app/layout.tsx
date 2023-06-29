@@ -19,8 +19,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full min-h-screen h-full bg-gradient-to-r from-gray-200 to-gray-400">
-          <div className="h-full min-h-screen w-full bg-dotted-spacing-3 bg-dotted-gray-400/50">
+        <div className="w-full min-h-screen h-full bg-gray-950 ">
+          <div className="h-full min-h-screen w-full before:z-10 before:w-full before:h-full before:inset-0 before:absolute before:bg-dotted-spacing-3 before:bg-dotted-gray-400/10">
             <AnimatePresence mode="wait">
               {loading ? (
                 <motion.div className="bg-none" key="loading">
