@@ -13,7 +13,7 @@ export default function WorkSection({}: Props) {
     offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.6, 0.7], [0, 1, 1, 0]);
 
   const projects = [
     {
@@ -57,7 +57,7 @@ export default function WorkSection({}: Props) {
           </motion.ul>
         </div>
         <div className="sticky top-0 flex h-screen w-full items-center">
-          <div className="relative aspect-square w-full overflow-hidden rounded-md bg-gray-800">
+          <div className="relative aspect-square w-full overflow-hidden rounded-md bg-gray-900">
             {projects.map((project) => (
               <project.card id={project.id} key={project.id} />
             ))}

@@ -12,7 +12,7 @@ export default function HeroBanner({}: Props) {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.4], [1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 0.6], [1, 0.8]);
 
   useEffect(() => {
     const currentRef = heroRef.current;
@@ -36,19 +36,19 @@ export default function HeroBanner({}: Props) {
     <motion.div
       ref={heroRef}
       style={{ opacity }}
-      className="flex w-full relative before:opacity-50 flex-col gap-3 bg-gray-950 h-screen items-center justify-center before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)]  "
+      className="relative flex h-screen w-full flex-col items-center justify-center gap-3 bg-gray-950 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)] before:opacity-50  "
     >
       <motion.div style={{ scale }} className="relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
-          className="text-lg font-bold text-gray-500 text-center"
+          className="text-center text-lg font-bold text-gray-500"
         >
           Hello, I&apos;m
         </motion.div>
         <motion.h1
-          className="text-6xl font-black text-center text-transparent p-2 bg-clip-text bg-gradient-to-tr from-gray-700 to-gray-100"
+          className="bg-gradient-to-tr from-gray-700 to-gray-100 bg-clip-text p-2 text-center text-6xl font-black text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4 }}
@@ -56,17 +56,17 @@ export default function HeroBanner({}: Props) {
           Mats Fjeldstad
         </motion.h1>
         <motion.h2
-          className="text-2xl font-bold text-center text-gray-400"
+          className="text-center text-2xl font-bold text-gray-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.6 }}
         >
-          I am a front-end developer
+          I can center divs
         </motion.h2>
         <div className="mt-10">
           <div>
             <Link href={''}>
-              <div className="text-lg font-bold text-gray-200 text-center">View my work</div>
+              <div className="text-center text-lg font-bold text-gray-200">View my work</div>
             </Link>
           </div>
         </div>
