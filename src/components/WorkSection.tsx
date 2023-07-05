@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import ProjectsTitle from './ProjectSection/ProjectsTitle';
 import { EmailResponder, ExtraHex, Holidaze, Mintra, TheGoldenEgg } from './ProjectSection/ProjectsCard';
 
@@ -13,7 +13,7 @@ export default function WorkSection({}: Props) {
     offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.6, 0.7], [0, 1, 1, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 0.85], [0, 1, 1, 0]);
 
   const projects = [
     {
@@ -44,7 +44,7 @@ export default function WorkSection({}: Props) {
   ];
 
   return (
-    <motion.section style={{ opacity }} ref={workSectionRef} className="mx-auto h-[300vh] max-w-4xl px-4">
+    <motion.section style={{ opacity }} ref={workSectionRef} className="mx-auto h-full max-w-4xl px-4">
       <motion.div className="mt-20 text-center text-4xl font-black uppercase">My Work</motion.div>
       <motion.div className="flex w-full items-start gap-20">
         <div className="w-full py-[50vh]">
