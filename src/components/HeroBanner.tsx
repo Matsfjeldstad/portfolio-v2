@@ -38,7 +38,7 @@ export default function HeroBanner({}: Props) {
       style={{ opacity }}
       className="relative flex h-screen w-full flex-col items-center justify-center gap-3 bg-gray-950 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)] before:opacity-50  "
     >
-      <motion.div style={{ scale }} className="relative z-10">
+      <motion.div style={{ scale }} className="relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
