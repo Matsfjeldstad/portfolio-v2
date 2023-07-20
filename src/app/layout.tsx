@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import PageLoadingAnimation from '../components/PageLoadingAnimation';
 import Navbar from '@/components/Navbar';
+import classNames from 'classnames';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,23 +19,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="h-full min-h-screen w-full bg-gray-950 ">
-          <div className="h-full min-h-screen w-full before:absolute before:inset-0 before:z-10 before:h-full before:w-full before:bg-dotted-spacing-3 before:bg-dotted-gray-400/10">
-            <AnimatePresence mode="wait">
-              {loading ? (
-                <motion.div className="bg-none" key="loading">
-                  <PageLoadingAnimation setLoading={setLoading} />
-                </motion.div>
-              ) : (
-                <>
-                  <Navbar />
-                  <motion.div key="loaded">{children}</motion.div>
-                </>
-              )}
-            </AnimatePresence>
-          </div>
+      <body className={classNames('scroll-smooth', inter.className)}>
+        <div className="relative h-full min-h-screen w-full bg-gray-950 ">
+          {/* <div className="pointer-events-none absolute inset-0 z-10 h-full w-full bg-dotted-spacing-3 bg-dotted-gray-400/10"> */}
+          <AnimatePresence mode="wait">
+            {loading ? (
+              <motion.div className="bg-none" key="loading">
+                <PageLoadingAnimation setLoading={setLoading} />
+              </motion.div>
+            ) : (
+              <>
+                <Navbar />
+                <motion.div key="loaded">{children}</motion.div>
+              </>
+            )}
+          </AnimatePresence>
         </div>
+        {/* </div> */}
       </body>
     </html>
   );

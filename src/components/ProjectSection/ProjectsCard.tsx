@@ -23,6 +23,7 @@ function ProjectsCard({ children, gradient, id }: Props) {
         inViewProject === id ? 'opacity-100' : 'opacity-0',
       )}
     >
+      <div className="pointer-events-none absolute inset-0 z-50 h-full w-full bg-noise opacity-90" />
       {children}
     </div>
   );
@@ -31,7 +32,7 @@ function ProjectsCard({ children, gradient, id }: Props) {
 export function ExtraHex({ id }: CardProps) {
   return (
     <ProjectsCard id={id} gradient="from-gray-800 to-black">
-      <div className="flex flex-col items-center text-gray-400">
+      <div className="flex flex-col items-center text-gray-400 ">
         <ExtraHexLogo fill="white" className="z-10" />
         <div>Alternative Hex Staking interface</div>
       </div>

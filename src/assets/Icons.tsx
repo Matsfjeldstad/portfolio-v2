@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  fill: string;
+  fill?: string;
   className?: string;
 };
 
@@ -9,6 +9,19 @@ export default function Icons({}: Props) {
   return <div>Icons</div>;
 }
 
+export function ArrowDown({ fill, className }: Props) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className={className}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75" />
+    </svg>
+  );
+}
 export function HouseIcon({ fill, className }: Props) {
   return (
     <svg width="36" height="35" className={className} viewBox="0 0 36 35" xmlns="http://www.w3.org/2000/svg">
@@ -133,15 +146,14 @@ export function Supabase({ fill, className }: Props) {
       width="49"
       height="49"
       viewBox="0 0 49 49"
-      fill="none"
+      fill={fill}
       className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="0.637695" y="0.857422" width="48" height="48" rx="4" fill={fill} />
+      <rect x="0.637695" y="0.857422" width="48" height="48" rx="4" />
       <path
         d="M38.6803 20.8883H24.637V7.45103C24.6369 7.3257 24.5972 7.20361 24.5235 7.10223C24.4498 7.00084 24.3459 6.92536 24.2268 6.88658C24.1076 6.8478 23.9792 6.8477 23.86 6.88631C23.7407 6.92491 23.6368 7.00024 23.5629 7.10152L9.94113 25.4934L9.33962 26.3365C9.16764 26.5687 9.06352 26.8441 9.03888 27.132C9.01425 27.4199 9.07006 27.709 9.20009 27.967C9.33013 28.2251 9.52927 28.4419 9.77533 28.5934C10.0214 28.7449 10.3047 28.8251 10.5936 28.825H24.637V42.2638C24.6371 42.3891 24.6768 42.5112 24.7505 42.6126C24.8241 42.714 24.928 42.7895 25.0472 42.8283C25.1663 42.867 25.2947 42.8671 25.414 42.8285C25.5332 42.7899 25.6372 42.7146 25.711 42.6133L39.3328 24.2214L39.9343 23.3784C40.1067 23.1462 40.2112 22.8706 40.2361 22.5825C40.2609 22.2944 40.2052 22.005 40.0751 21.7467C39.945 21.4884 39.7457 21.2713 39.4994 21.1197C39.2531 20.9682 38.9695 20.8881 38.6803 20.8883Z"
         fill="black"
-        className="invert"
       />
     </svg>
   );
