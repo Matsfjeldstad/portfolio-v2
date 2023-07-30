@@ -62,10 +62,6 @@ export default function ContactMeSection({}: Props) {
           style={{ opacity: opacity2 }}
           className="pointer-events-none fixed inset-0 z-0 h-full w-screen bg-[radial-gradient(at_bottom_right,_#B12E82_0%,_transparent_50%)]"
         />
-        {/* <motion.div
-          style={{ opacity: opacity2 }}
-          className="pointer-events-none fixed inset-0 z-0 h-full w-screen bg-[radial-gradient(at_bottom_left,_#B12E82_0%,_transparent_35%)]"
-        /> */}
         <div className="flex flex-col gap-2">
           <h4 className="relative text-4xl font-bold">
             Let&apos;s talk about <br /> your next project.
