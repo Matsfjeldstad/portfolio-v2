@@ -21,7 +21,10 @@ export default function ProjectsTitle({ children, id }: Props) {
   return (
     <p
       ref={titleRef}
-      className={classNames('py-20 text-5xl font-bold transition-colors', isInView ? 'text-gray-100' : 'text-gray-800')}
+      className={classNames(
+        'py-32 font-bold transition-colors sm:text-3xl md:text-5xl',
+        isInView ? 'text-gray-100' : 'text-gray-800',
+      )}
     >
       {children}
     </p>

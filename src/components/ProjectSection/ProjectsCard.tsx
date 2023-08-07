@@ -3,6 +3,7 @@ import { useProjectStore } from './Store';
 import { ExtraHexLogo } from '@/assets/Logos';
 import Image from 'next/image';
 import { HouseIcon, SparkleIcon, EmailIcon } from '@/assets/Icons';
+import Link from 'next/link';
 
 type Props = {
   children: React.ReactNode;
@@ -20,9 +21,10 @@ function ProjectsCard({ children, gradient, id }: Props) {
       className={classNames(
         gradient,
         'absolute inset-0 flex h-full w-full items-center justify-center bg-gradient-to-br p-4 transition-opacity before:absolute before:inset-0 before:h-full before:w-full before:bg-dotted-spacing-3 before:bg-dotted-gray-400/10',
-        inViewProject === id ? 'opacity-100' : 'opacity-0',
+        inViewProject === id ? 'opacity-100' : 'pointer-events-none opacity-0',
       )}
     >
+      <div className="pointer-events-none absolute inset-0 z-50 h-full w-full bg-noise opacity-90" />
       {children}
     </div>
   );
@@ -31,12 +33,13 @@ function ProjectsCard({ children, gradient, id }: Props) {
 export function ExtraHex({ id }: CardProps) {
   return (
     <ProjectsCard id={id} gradient="from-gray-800 to-black">
-      <div className="flex flex-col items-center text-gray-400">
+      <div className="flex flex-col items-center text-gray-400 ">
         <ExtraHexLogo fill="white" className="z-10" />
         <div>Alternative Hex Staking interface</div>
       </div>
-
-      <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-400">view project</button>
+      <Link href="projects/extra-hex">
+        <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-400">view project</button>
+      </Link>
     </ProjectsCard>
   );
 }
@@ -48,7 +51,9 @@ export function EmailResponder({ id }: CardProps) {
         <SparkleIcon className="absolute -left-5 -top-7" fill="white" />
         <EmailIcon className="h-10 w-10" fill="white" />
       </div>
-      <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-100">view project</button>
+      <Link href={'/projects/EmailResponder'}>
+        <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-100">view project</button>
+      </Link>
     </ProjectsCard>
   );
 }
@@ -60,7 +65,9 @@ export function Mintra({ id }: CardProps) {
         <div className="text-3xl font-black uppercase text-gray-950">Mintra</div>
         <div className="text-sm font-medium text-gray-800">FIND YOUR NEXT TREASURE</div>
       </div>
-      <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-900">view project</button>
+      <Link href="projects/mintra">
+        <div className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-900">view project</div>
+      </Link>
     </ProjectsCard>
   );
 }
@@ -77,7 +84,9 @@ export function Holidaze({ id }: CardProps) {
           <HouseIcon fill="white" className="h-6 w-6" />
         </div>
       </div>
-      <button className="absolute bottom-4 right-4 rounded-sm p-1 text-gray-800">view project</button>
+      <Link href="projects/holidaze">
+        <div className="absolute bottom-4 right-4 rounded-sm p-1 text-gray-800">view project</div>
+      </Link>
     </ProjectsCard>
   );
 }
@@ -86,7 +95,9 @@ export function TheGoldenEgg({ id }: CardProps) {
   return (
     <ProjectsCard id={id} gradient="from-[#1A1335] to-blue-900">
       <Image src="/Golden-Egg-Logo.png" alt="widget showing amout of staked hex" width={200} height={200} />
-      <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-400">view project</button>
+      <Link href="projects/holidaze">
+        <div className="absolute bottom-4 right-4 rounded-sm p-1 text-gray-400">view project</div>
+      </Link>
     </ProjectsCard>
   );
 }

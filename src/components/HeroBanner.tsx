@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { ArrowDown } from '@/assets/Icons';
 
 type Props = {};
 
@@ -38,17 +39,17 @@ export default function HeroBanner({}: Props) {
       style={{ opacity }}
       className="relative flex h-screen w-full flex-col items-center justify-center gap-3 bg-gray-950 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)] before:opacity-50  "
     >
-      <motion.div style={{ scale }} className="relative z-10">
+      <motion.div style={{ scale }} className="relative p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
-          className="text-center text-lg font-bold text-gray-500"
+          className="text-center text-lg font-bold text-gray-300"
         >
           Hello, I&apos;m
         </motion.div>
         <motion.h1
-          className="bg-gradient-to-tr from-gray-700 to-gray-100 bg-clip-text p-2 text-center text-6xl font-black text-transparent"
+          className="bg-gradient-to-tr from-gray-600 to-gray-100 bg-clip-text p-2 text-center text-5xl font-black text-transparent sm:text-6xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4 }}
@@ -56,19 +57,18 @@ export default function HeroBanner({}: Props) {
           Mats Fjeldstad
         </motion.h1>
         <motion.h2
-          className="text-center text-2xl font-bold text-gray-400"
+          className="max-w-md text-center text-2xl lowercase text-gray-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.6 }}
         >
-          I can center divs
+          Converting Coffee into Code Since 2021
         </motion.h2>
         <div className="mt-10">
-          <div>
-            <Link href={''}>
-              <div className="text-center text-lg font-bold text-gray-200">View my work</div>
-            </Link>
-          </div>
+          <Link href="/#projects" className="flex items-center justify-center">
+            <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
+            <ArrowDown className="h-5 w-5 fill-gray-200" />
+          </Link>
         </div>
       </motion.div>
     </motion.div>

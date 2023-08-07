@@ -1,20 +1,83 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
-export function HamburgerMenu() {
+type Props = {
+  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  navIsOpen: boolean;
+};
+
+export function HamburgerMenu({ setNavIsOpen, navIsOpen }: Props) {
   return (
-    <div className="flex flex-col gap-1">
-      <div className="w-7 h-1 rounded bg-gray-100"></div>
-      <div className="w-7 h-1 rounded bg-gray-100"></div>
-      <div className="w-7 h-1 rounded bg-gray-100"></div>
-    </div>
+    <motion.div
+      onClick={() => setNavIsOpen(!navIsOpen)}
+      className="group relative z-50 flex cursor-pointer flex-col items-center justify-center gap-1 "
+    >
+      <div className=" absolute z-10 h-0 w-0 rounded-full bg-pink-500 duration-150 group-hover:h-12 group-hover:w-12" />
+      <motion.div
+        {...(navIsOpen && { animate: { rotate: 45, margin: 0, y: 8 } })}
+        className="z-20 h-1 w-7 rounded bg-gray-100"
+      ></motion.div>
+      <motion.div
+        {...(navIsOpen && { animate: { rotate: -45, margin: 0 } })}
+        className="z-20 h-1 w-7 rounded bg-gray-100"
+      ></motion.div>
+      <motion.div
+        {...(navIsOpen && { animate: { rotate: -45, margin: 0, y: -8 } })}
+        className="z-20 h-1 w-7 rounded bg-gray-100"
+      ></motion.div>
+    </motion.div>
+  );
+}
+
+const navLinks = [
+  { name: 'Home', href: '/#hero' },
+  { name: 'Projects', href: '/#projects' },
+  { name: 'About me', href: '/#about' },
+  { name: 'Contact me', href: '/#contact' },
+];
+
+function NavLinks({ navIsOpen, setNavIsOpen }: Props) {
+  return (
+    <motion.div
+      initial={{ height: 0 }}
+      {...(navIsOpen && { animate: { height: '100vh' } })}
+      className={`absolute right-0 top-0 z-40 w-screen gap-5 overflow-hidden  text-center text-5xl text-gray-100 `}
+    >
+      <div className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-5 bg-slate-950 bg-dotted-spacing-3 bg-dotted-gray-500/20  ">
+        {navLinks.map((link) => (
+          <motion.div
+            key={link.name}
+            initial={{ opacity: 0, scale: 0.7 }}
+            {...(navIsOpen && {
+              animate: {
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  delay: (0.1 * navLinks.indexOf(link)) / 2,
+                },
+              },
+            })}
+            className="even:mr-10  md:even:mr-36"
+          >
+            <Link
+              href={link.href}
+              onClick={() => setNavIsOpen(!navIsOpen)}
+              className="text-4xl font-black uppercase text-gray-200 duration-150 hover:scale-105 hover:text-pink-500 sm:text-6xl md:text-7xl"
+            >
+              {link.name}
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 
 export default function Navbar() {
+  const [navIsOpen, setNavIsOpen] = useState(false);
   return (
-    <div className="fixed w-screen z-10 px-6">
+    <div className="fixed left-0 top-0 z-10 w-full ">
       <motion.header
         initial={{
           y: -50,
@@ -24,12 +87,13 @@ export default function Navbar() {
           y: 0,
           opacity: 1,
         }}
-        className="font-bold p-4 w-full mx-auto max-w-[1400px] items-center flex justify-between h-20px"
+        className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between p-6 font-bold"
       >
-        <Link href="/" className="font-black text-2xl text-gray-100">
+        <Link href="/" className="z-50 text-2xl font-black text-gray-100">
           fjeldstad.
         </Link>
-        <HamburgerMenu />
+        <HamburgerMenu setNavIsOpen={setNavIsOpen} navIsOpen={navIsOpen} />
+        <NavLinks navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </motion.header>
     </div>
   );
