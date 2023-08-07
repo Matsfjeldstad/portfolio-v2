@@ -16,5 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-dotted-background')],
+  plugins: [require('tailwindcss-dotted-background'), require('tailwind-scrollbar-hide')],
 };
