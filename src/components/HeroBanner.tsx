@@ -72,7 +72,7 @@ export default function HeroBanner({}: Props) {
         >
           Converting Coffee into Code Since 2021
         </motion.h2>
-        <div onClick={() => scrollToProjects()} className="mt-10">
+        <div onClick={() => scrollToProjects()} className="mt-10 flex items-center justify-center gap-2">
           {/* <Link href="/#projects" className="flex items-center justify-center"> */}
           <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
           <ArrowDown className="h-5 w-5 fill-gray-200" />

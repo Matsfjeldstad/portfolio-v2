@@ -1,13 +1,8 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import extraHexDarkHome from '@/assets/extrahex-home-dark.jpg';
-import extraHexDarkDApp from '@/assets/extrahex-dark.jpg';
-import extrahexFAQ from '@/assets/extrahex-faq.jpg';
 import extrahexPortfolio from '@/assets/extrahex-portfolio-blank.png';
 import extrahexPortfolioComponent from '@/assets/extrahex-portfolio-component.png';
-import extrahexIndividualStakeWidget from '@/assets/extrahex-stake-widget.png';
-import extrahexIndividualStakeDark from '@/assets/extrahex-individual-stake-dark.jpg';
 import React, { useRef } from 'react';
 import Image from 'next/image';
 

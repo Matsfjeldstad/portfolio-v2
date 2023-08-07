@@ -6,15 +6,8 @@ import Introduction from '@/components/mintra/Introduction';
 import MockupSection from '@/components/mintra/MockupSection';
 import ProjectDescription from '@/components/mintra/ProjectDescripion';
 import RoleSection from '@/components/mintra/RoleSection';
-import TechnologySection from '@/components/mintra/TechnologySection';;
+import TechnologySection from '@/components/mintra/TechnologySection';
 import { useNavColorStore } from '@/components/ProjectSection/Store';
-import type { Metadata } from 'next';
-
-export function metadata(): Metadata {
-  return {
-    title: 'Next.js',
-  };
-}
 
 export default function Page() {
   const setPrevNavColor = useNavColorStore((state) => state.setPrevNavColor);
