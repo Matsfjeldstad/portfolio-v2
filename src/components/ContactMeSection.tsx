@@ -93,11 +93,11 @@ export default function ContactMeSection({}: Props) {
             <Github fill="white" className="h-4 w-4" />
             <a className=" "> Github</a>
           </div>
-          <a href="/CV-Mats-Fjeldstad.pdf" download>
+          {/* <a href="/CV-Mats-Fjeldstad.pdf" download>
             <button className=" cursor-pointer rounded border px-4 py-2 duration-150 hover:bg-white/10">
               Download CV
             </button>
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
