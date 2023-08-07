@@ -1,3 +1,6 @@
+'use client';
+import React, { useEffect } from 'react';
+import { useNavColorStore } from '@/components/ProjectSection/Store';
 import HeroBanner from '@/components/extra-hex/HeroBanner';
 import ImageSection from '@/components/extra-hex/ImageSection';
 import Introduction from '@/components/extra-hex/Introduction';
@@ -6,9 +9,14 @@ import ProjectDescription from '@/components/extra-hex/ProjectDescripion';
 import RoleSection from '@/components/extra-hex/RoleSection';
 import TechnologySection from '@/components/extra-hex/TechnologySection';
 import Image from 'next/image';
-import React from 'react';
 
-export default function page() {
+export default function Page() {
+  const setPrevNavColor = useNavColorStore((state) => state.setPrevNavColor);
+  const setNavColor = useNavColorStore((state) => state.setNavColor);
+  useEffect(() => {
+    setNavColor('gray-100');
+    setPrevNavColor('gray-100');
+  }, [setNavColor, setPrevNavColor]);
   return (
     <main className="min-h-screen bg-gray-950 py-20">
       <HeroBanner />

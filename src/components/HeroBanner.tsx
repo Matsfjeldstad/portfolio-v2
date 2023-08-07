@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowDown } from '@/assets/Icons';
+import { idText } from 'typescript';
 
 type Props = {};
 
@@ -14,6 +15,13 @@ export default function HeroBanner({}: Props) {
 
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.6], [1, 0.8]);
+
+  const projectId = document.getElementById('projects');
+
+  const scrollToProjects = () => {
+    if (!projectId) return;
+    projectId.scrollIntoView({ behavior: 'smooth' });
+  };
 
   useEffect(() => {
     const currentRef = heroRef.current;
@@ -64,11 +72,11 @@ export default function HeroBanner({}: Props) {
         >
           Converting Coffee into Code Since 2021
         </motion.h2>
-        <div className="mt-10">
-          <Link href="/#projects" className="flex items-center justify-center">
-            <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
-            <ArrowDown className="h-5 w-5 fill-gray-200" />
-          </Link>
+        <div onClick={() => scrollToProjects()} className="mt-10">
+          {/* <Link href="/#projects" className="flex items-center justify-center"> */}
+          <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
+          <ArrowDown className="h-5 w-5 fill-gray-200" />
+          {/* </Link> */}
         </div>
       </motion.div>
     </motion.div>

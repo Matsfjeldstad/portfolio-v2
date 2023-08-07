@@ -1,13 +1,17 @@
+'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavColorStore } from './ProjectSection/Store';
+import classNames from 'classnames';
 
 type Props = {
   setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   navIsOpen: boolean;
+  navColor?: string;
 };
 
-export function HamburgerMenu({ setNavIsOpen, navIsOpen }: Props) {
+export function HamburgerMenu({ setNavIsOpen, navIsOpen, navColor }: Props) {
   return (
     <motion.div
       onClick={() => setNavIsOpen(!navIsOpen)}
@@ -16,26 +20,32 @@ export function HamburgerMenu({ setNavIsOpen, navIsOpen }: Props) {
       <div className=" absolute z-10 h-0 w-0 rounded-full bg-pink-500 duration-150 group-hover:h-12 group-hover:w-12" />
       <motion.div
         {...(navIsOpen && { animate: { rotate: 45, margin: 0, y: 8 } })}
-        className="z-20 h-1 w-7 rounded bg-gray-100"
+        className={classNames('z-20 h-1 w-7 rounded', `bg-${navColor}`)}
       ></motion.div>
       <motion.div
         {...(navIsOpen && { animate: { rotate: -45, margin: 0 } })}
-        className="z-20 h-1 w-7 rounded bg-gray-100"
+        className={classNames('z-20 h-1 w-7 rounded', `bg-${navColor}`)}
       ></motion.div>
       <motion.div
         {...(navIsOpen && { animate: { rotate: -45, margin: 0, y: -8 } })}
-        className="z-20 h-1 w-7 rounded bg-gray-100"
+        className={classNames('z-20 h-1 w-7 rounded', `bg-${navColor}`)}
       ></motion.div>
     </motion.div>
   );
 }
 
 const navLinks = [
-  { name: 'Home', href: '/#hero' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'About me', href: '/#about' },
-  { name: 'Contact me', href: '/#contact' },
+  { name: 'Home', href: '/#hero', scrollId: 'hero' },
+  { name: 'Projects', href: '/#projects', scrollId: 'projects' },
+  { name: 'About me', href: '/#about', scrollId: 'about' },
+  { name: 'Contact me', href: '/#contact', scrollId: 'contact' },
 ];
+
+const scrollToId = (id: string) => {
+  const element = document.getElementById(id);
+  if (!element) return;
+  element.scrollIntoView({ behavior: 'smooth' });
+};
 
 function NavLinks({ navIsOpen, setNavIsOpen }: Props) {
   return (
@@ -60,13 +70,15 @@ function NavLinks({ navIsOpen, setNavIsOpen }: Props) {
             })}
             className="even:mr-10  md:even:mr-36"
           >
-            <Link
-              href={link.href}
-              onClick={() => setNavIsOpen(!navIsOpen)}
+            <div
+              onClick={() => {
+                setNavIsOpen(!navIsOpen);
+                scrollToId(link.scrollId);
+              }}
               className="text-4xl font-black uppercase text-gray-200 duration-150 hover:scale-105 hover:text-pink-500 sm:text-6xl md:text-7xl"
             >
               {link.name}
-            </Link>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -76,6 +88,14 @@ function NavLinks({ navIsOpen, setNavIsOpen }: Props) {
 
 export default function Navbar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
+  const navColor = useNavColorStore((state) => state.navColor);
+  const setNavColorBasedOnCondition = useNavColorStore((state) => state.setNavColorBasedOnCondition);
+
+  useEffect(() => {
+    setNavColorBasedOnCondition(navIsOpen);
+    console.log(navColor);
+  }, [navIsOpen, setNavColorBasedOnCondition, navColor]);
+
   return (
     <div className="fixed left-0 top-0 z-10 w-full ">
       <motion.header
@@ -89,10 +109,10 @@ export default function Navbar() {
         }}
         className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between p-6 font-bold"
       >
-        <Link href="/" className="z-50 text-2xl font-black text-gray-100">
+        <Link href="/" className={classNames('z-50 text-2xl font-black', `text-${navColor}`)}>
           fjeldstad.
         </Link>
-        <HamburgerMenu setNavIsOpen={setNavIsOpen} navIsOpen={navIsOpen} />
+        <HamburgerMenu setNavIsOpen={setNavIsOpen} navIsOpen={navIsOpen} navColor={navColor} />
         <NavLinks navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </motion.header>
     </div>
