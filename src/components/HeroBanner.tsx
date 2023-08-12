@@ -47,17 +47,17 @@ export default function HeroBanner({}: Props) {
       style={{ opacity }}
       className="relative flex h-screen w-full flex-col items-center justify-center gap-3 bg-gray-950 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)] before:opacity-50  "
     >
-      <motion.div style={{ scale }} className="relative p-6">
+      <motion.div style={{ scale }} className="relative flex flex-col items-center gap-7 p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.3 }}
-          className="text-center text-lg font-bold text-gray-300"
+          className="text-center text-lg font-bold text-gray-400"
         >
           Hello, I&apos;m
         </motion.div>
         <motion.h1
-          className="bg-gradient-to-tr from-gray-600 to-gray-100 bg-clip-text p-2 text-center text-5xl font-black text-transparent sm:text-6xl"
+          className="bg-gradient-to-tr from-gray-600 to-gray-100 bg-clip-text p-2 text-center text-5xl font-black tracking-tight text-transparent sm:text-8xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.4 }}
@@ -65,7 +65,7 @@ export default function HeroBanner({}: Props) {
           Mats Fjeldstad
         </motion.h1>
         <motion.h2
-          className="max-w-md text-center text-2xl lowercase text-gray-300"
+          className="max-w-md text-center text-2xl lowercase text-gray-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.6 }}
