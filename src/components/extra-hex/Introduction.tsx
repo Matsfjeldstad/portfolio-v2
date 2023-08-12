@@ -13,7 +13,7 @@ export default function Introduction({}: Props) {
   const x = useTransform(scrollYProgress, [0.1, 0.4], [-60, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
-      <motion.div style={{ opacity, x }} className="relative z-0 flex h-[80vh] w-1/2 max-w-md flex-col gap-4">
+      <motion.div style={{ opacity, x }} className="relative z-0 flex h-[80vh] max-w-md flex-col gap-4 leading-7">
         <h2 className="text-2xl font-bold">Better UI/UX for the Hex Community</h2>
         <p>
           Extrahex.com is a user-centric alternative front end to hex.com, born out of a desire for enhanced user

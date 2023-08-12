@@ -10,7 +10,7 @@ export default function RoleSection({}: Props) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
 
   const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const x = useTransform(scrollYProgress, [0.1, 0.4], [-60, 0]);
+  const x = useTransform(scrollYProgress, [0.1, 0.2], [-60, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
       <motion.div

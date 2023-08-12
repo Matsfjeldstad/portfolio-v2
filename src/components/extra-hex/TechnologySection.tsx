@@ -64,7 +64,7 @@ export default function TechnologySection({}: Props) {
   ];
 
   const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const x = useTransform(scrollYProgress, [0.1, 0.4], [-60, 0]);
+  const x = useTransform(scrollYProgress, [0.1, 0.2], [-60, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
       <motion.div style={{ opacity, x }} className="relative z-0 flex max-w-md flex-col gap-4 text-gray-400">

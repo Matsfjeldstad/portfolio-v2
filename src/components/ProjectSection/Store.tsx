@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { create } from 'zustand';
 
 type ProjectStore = {
@@ -7,8 +6,8 @@ type ProjectStore = {
 };
 
 type NavColorStore = {
-  prevNavColor: string | null;
-  navColor: string | null;
+  prevNavColor: string;
+  navColor: string;
   setNavColor: (color: string) => void;
   setPrevNavColor: (color: string) => void;
   setNavColorBasedOnCondition: (condition: boolean) => void;

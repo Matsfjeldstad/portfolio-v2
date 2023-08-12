@@ -1,10 +1,7 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import extrahexPortfolio from '@/assets/extrahex-portfolio-blank.png';
-import holidazeMapVideo from '/holidaze-map.mp4';
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { MapBox } from '@/assets/Icons';
 
 type Props = {};
@@ -18,8 +15,6 @@ export default function ImageSection({}: Props) {
   const textOpacity = useTransform(scrollYProgress, [0.2, 0.3, 0.4, 0.5], [0, 1, 1, 0]);
   const imageOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
   const imageOpacity2 = useTransform(scrollYProgress, [0.15, 0.25, 0.4, 0.5], [0, 1, 1, 0]);
-  const x = useTransform(scrollYProgress, [0.4, 0.55], ['50%', '0%']);
-  const scale = useTransform(scrollYProgress, [0.4, 0.55], [1.4, 1]);
 
   return (
     <motion.div style={{ opacity }} ref={ref} className="mt-40 flex justify-center">

@@ -1,10 +1,6 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-
-import extrahexPortfolio from '@/assets/extrahex-portfolio-blank.png';
-import holidazeMapVideo from '/holidaze-map.mp4';
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { MapBox } from '@/assets/Icons';
 
 type Props = {};

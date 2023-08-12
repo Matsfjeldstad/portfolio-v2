@@ -12,11 +12,6 @@ import Image from 'next/image';
 import { useNavColorStore } from '@/components/ProjectSection/Store';
 import type { Metadata } from 'next';
 
-export function metadata(): Metadata {
-  return {
-    title: 'Next.js',
-  };
-}
 
 export default function Page() {
   const setPrevNavColor = useNavColorStore((state) => state.setPrevNavColor);
