@@ -17,18 +17,7 @@ export default function Home() {
     setPrevNavColor('gray-100');
   }, [setNavColor, setPrevNavColor]);
   return (
-    // <AnimatePresence mode="wait">
-    //           {loading ? (
-    //             <motion.div className="bg-none" key="loading">
-    //               <PageLoadingAnimation setLoading={setLoading} />
-    //             </motion.div>
-    //           ) : (
-    //             <>
-    //               <Navbar />
-    //               <div>{children}</div>
-    //             </>
-    //           )}
-    //         </AnimatePresence>
+
     <main className="relative min-h-screen">
       <AnimatePresence mode="wait">
         {loading ? (
