@@ -482,6 +482,21 @@ export function ChatGPT({ fill, className }: Props) {
     </svg>
   );
 }
+export function ShadcnUI({ fill, className }: Props) {
+  return (
+    <svg
+      width="256"
+      height="256"
+      fill={fill}
+      className={className}
+      viewBox="0 0 256 256"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M208 128L128 208" stroke="black" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M192 40L40 192" stroke="black" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
 export function Icon({ fill, className }: Props) {
   return (
     <svg

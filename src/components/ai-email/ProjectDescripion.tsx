@@ -23,9 +23,9 @@ export default function ProjectDescription({}: Props) {
         className="sticky top-0 z-0 flex h-screen w-screen  flex-col items-center justify-center gap-4 text-gray-400"
       >
         <div className="flex max-w-xl flex-col gap-4">
-          <h2 className="text-4xl font-bold text-gray-100 [text-wrap:balance]">Test KVIKK AI Email Generator:</h2>
+          <h2 className="text-4xl font-bold text-gray-100 [text-wrap:balance]">Test KVIKK:</h2>
           <p>
-            Powerd by OpenAI&apos;s GPT-3.5, this AI can generate a response to a email based on a prompt. The prompt
+            Powered by OpenAI&apos;s GPT-3.5, this AI can generate a response to a email based on a prompt. The prompt
             can be a email you want a response to, the mood of the response, and a little contex, the AI will generate a
             response based on the prompt.
           </p>

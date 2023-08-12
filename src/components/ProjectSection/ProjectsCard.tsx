@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useProjectStore } from './Store';
-import { ExtraHexLogo } from '@/assets/Logos';
+import { ExtraHexLogo, KvikkLogo } from '@/assets/Logos';
 import Image from 'next/image';
 import { HouseIcon, SparkleIcon, EmailIcon } from '@/assets/Icons';
 import Link from 'next/link';
@@ -46,12 +46,16 @@ export function ExtraHex({ id }: CardProps) {
 
 export function EmailResponder({ id }: CardProps) {
   return (
-    <ProjectsCard id={id} gradient="from-green-100 to-green-900">
-      <div className="relative">
-        <SparkleIcon className="absolute -left-5 -top-7" fill="white" />
-        <EmailIcon className="h-10 w-10" fill="white" />
+    <ProjectsCard id={id} gradient="from-purple-900 to-gray-950">
+      <div className="relative flex flex-col items-center justify-center">
+        <div className="relative">
+          <SparkleIcon className="absolute -left-5 -top-7" fill="white" />
+          <EmailIcon className="h-10 w-10" fill="white" />
+        </div>
+        <KvikkLogo className=" h-20 w-40 fill-white" />
+        <div className="text-sm font-medium text-gray-300">ai email generator</div>
       </div>
-      <Link href={'/projects/EmailResponder'}>
+      <Link href={'/projects/ai-email'}>
         <button className="absolute bottom-4 right-4 rounded-sm  p-1 text-gray-100">view project</button>
       </Link>
     </ProjectsCard>
@@ -95,7 +99,7 @@ export function TheGoldenEgg({ id }: CardProps) {
   return (
     <ProjectsCard id={id} gradient="from-[#1A1335] to-blue-900">
       <Image src="/Golden-Egg-Logo.png" alt="widget showing amout of staked hex" width={200} height={200} />
-      <Link href="projects/holidaze">
+      <Link href="projects/the-golden-egg">
         <div className="absolute bottom-4 right-4 rounded-sm p-1 text-gray-400">view project</div>
       </Link>
     </ProjectsCard>

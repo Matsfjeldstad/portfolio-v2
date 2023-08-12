@@ -22,11 +22,7 @@ export default function HeroBanner({}: Props) {
       ref={ref}
       className="relative mx-auto mt-20 flex h-[70vh] max-w-[1400px] justify-center gap-4 px-6 text-center"
     >
-      {/* <motion.div
-        style={{ opacity: gradientOpacity }}
-        className="pointer-events-none fixed inset-0 z-0 h-full w-screen bg-[radial-gradient(at_bottom_left,_#FF004C_10%,_transparent_70%)] "
-      /> */}
-      <motion.div style={{ opacity, scale, position }} className="top-40 flex max-w-3xl flex-col items-center">
+      <motion.div style={{ opacity, scale, position }} className="top-40 flex max-w-3xl flex-col items-center px-6">
         <p className="text-gray-900"> case study into</p>
         <div className=" p-4 text-6xl font-black uppercase text-gray-950">Mintra</div>
         <p className="capitalize text-gray-900"> Auction website buildt using HTML, Javascript and Tailwind CSS</p>

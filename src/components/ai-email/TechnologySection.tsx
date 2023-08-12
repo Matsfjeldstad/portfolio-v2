@@ -1,5 +1,5 @@
 'use client';
-import { TailwindCSS, Html, Css, JavaScript, ViteJs, ReactJs, ExpressJs, NextJs } from '@/assets/Icons';
+import { TailwindCSS, Html, Css, JavaScript, ViteJs, ReactJs, ExpressJs, NextJs, ShadcnUI } from '@/assets/Icons';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import React, { useRef } from 'react';
 
@@ -44,7 +44,7 @@ export default function TechnologySection({}: Props) {
 
     {
       name: 'Shadcn/ui',
-      icon: <TailwindCSS className={iconClasses} />,
+      icon: <ShadcnUI className={iconClasses} />,
       href: 'https://ui.shadcn.com/',
       description:
         'Shadcn/ui is re-usable components built using Radix UI and Tailwind CSS.This is NOT a component library. It is a collection of re-usable components that you can copy and paste into your apps and style to your liking using tailwind',
@@ -54,7 +54,7 @@ export default function TechnologySection({}: Props) {
   const opacity = useTransform(scrollYProgress, [0.1, 0.2, 0.8, 0.9], [0, 1, 1, 0]);
   const x = useTransform(scrollYProgress, [0.1, 0.2], [-20, 0]);
   return (
-    <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
+    <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center p-6 ">
       <motion.div style={{ opacity, x }} className="relative z-0 flex max-w-xl flex-col gap-4 text-gray-300">
         <h2 className="text-2xl font-bold text-gray-100">Technologies Used On Mintra:</h2>
         <p>

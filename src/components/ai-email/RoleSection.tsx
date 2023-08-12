@@ -12,7 +12,7 @@ export default function RoleSection({}: Props) {
   const gradientOpacity = useTransform(scrollYProgress, [0.2, 0.35, 0.8, 1], [0, 0.5, 0.5, 0]);
 
   const opacity = useTransform(scrollYProgress, [0.1, 0.3, 0.8, 1], [0, 1, 1, 0]);
-  const x = useTransform(scrollYProgress, [0.1, 0.4], [-60, 0]);
+  const x = useTransform(scrollYProgress, [0.1, 0.2], [-60, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
       <motion.div
@@ -25,7 +25,7 @@ export default function RoleSection({}: Props) {
       />
       <motion.div
         style={{ opacity, x }}
-        className="relative z-0 flex min-h-[80vh] max-w-xl flex-col gap-8 text-gray-400"
+        className="relative z-0 flex min-h-[80vh] max-w-xl flex-col gap-8 p-6 text-gray-400"
       >
         <h2 className="text-2xl font-bold text-gray-100">How I build it:</h2>
         <p className="text-base leading-7">

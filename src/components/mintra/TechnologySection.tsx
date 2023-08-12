@@ -55,7 +55,7 @@ export default function TechnologySection({}: Props) {
   const x = useTransform(scrollYProgress, [0.1, 0.2], [-20, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
-      <motion.div style={{ opacity, x }} className="relative z-0 flex max-w-xl flex-col gap-4 text-gray-800">
+      <motion.div style={{ opacity, x }} className="relative z-0 flex max-w-xl flex-col gap-4 p-6 text-gray-800">
         <h2 className="text-2xl font-bold text-gray-950">Technologies Used On Mintra:</h2>
         <p>
           Mintra was built using the following technologies. Click on the icons to learn more about each technology.

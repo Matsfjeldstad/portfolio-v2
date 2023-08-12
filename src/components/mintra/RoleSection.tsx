@@ -10,12 +10,12 @@ export default function RoleSection({}: Props) {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
 
   const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const x = useTransform(scrollYProgress, [0.1, 0.4], [-60, 0]);
+  const x = useTransform(scrollYProgress, [0.1, 0.2], [-60, 0]);
   return (
     <div ref={ref} className="mx-auto mt-40 flex max-w-5xl justify-center ">
       <motion.div
         style={{ opacity, x }}
-        className="relative z-0 flex min-h-[80vh] max-w-xl flex-col gap-8 text-gray-700"
+        className="relative z-0 flex min-h-[80vh] max-w-xl flex-col gap-8 p-6 text-gray-700"
       >
         <h2 className="text-2xl font-bold text-gray-950">My Role On the Project:</h2>
         <p>

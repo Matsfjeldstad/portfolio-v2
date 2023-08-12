@@ -21,6 +21,11 @@ export default function WorkSection({}: Props) {
 
   const projects = [
     {
+      title: 'Ai Email Generator',
+      id: 'ai-email-responder',
+      card: EmailResponder,
+    },
+    {
       title: 'ExtraHex.com',
       id: 'extrahex',
       card: ExtraHex,
@@ -39,11 +44,6 @@ export default function WorkSection({}: Props) {
       title: 'Mintra',
       id: 'mintra',
       card: Mintra,
-    },
-    {
-      title: 'Ai Email Responder',
-      id: 'ai-email-responder',
-      card: EmailResponder,
     },
   ];
 

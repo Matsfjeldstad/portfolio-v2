@@ -30,7 +30,7 @@ export default function Page() {
       <MockupSection />
       <RoleSection />
       <TechnologySection />
-      <ImageSection />
+      {/* <ImageSection /> */}
       <ProjectDescription />
     </main>
   );
