@@ -36,7 +36,7 @@ export default function AboutMeSection({}: Props) {
         style={{ opacity: gradientOpacity }}
         className="pointer-events-none fixed inset-0 z-0 h-full w-full bg-[radial-gradient(circle_farthest-side_at_100px_300px,_#B12E82_0%,_transparent_40%)]"
       />
-      <div className="relative z-20 mx-auto max-w-4xl p-6">
+      <div className="relative z-10 mx-auto max-w-4xl p-6">
         {/* <div className="h-[150vh]">
           <motion.h1
             style={{ opacity: headingOpacity }}
@@ -90,7 +90,7 @@ export default function AboutMeSection({}: Props) {
           </div>
         </motion.div>
       </div>
-      <div className="relative z-20 mx-auto max-w-4xl">
+      <div className="relative z-10 mx-auto max-w-4xl">
         <ToolsAndSkills className="h-screen" />
       </div>
     </motion.section>

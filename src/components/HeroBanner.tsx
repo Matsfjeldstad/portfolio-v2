@@ -47,7 +47,7 @@ export default function HeroBanner({}: Props) {
       style={{ opacity }}
       className="relative flex h-screen w-full flex-col items-center justify-center gap-3 bg-gray-950 before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--mouse-x,100px)_var(--mouse-y,100px),_#B12E82_0%,_transparent_100%)] before:opacity-50  "
     >
-      <motion.div style={{ scale }} className="relative flex flex-col items-center gap-7 p-6">
+      <motion.div style={{ scale }} className="relative flex flex-col items-center gap-4 p-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,12 +72,17 @@ export default function HeroBanner({}: Props) {
         >
           Converting Coffee into Code Since 2021
         </motion.h2>
-        <div onClick={() => scrollToProjects()} className="mt-10 flex items-center justify-center gap-2">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          onClick={() => scrollToProjects()}
+          className="mt-10 flex cursor-pointer items-center justify-center gap-2"
+        >
           {/* <Link href="/#projects" className="flex items-center justify-center"> */}
           <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
           <ArrowDown className="h-5 w-5 fill-gray-200" />
           {/* </Link> */}
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );

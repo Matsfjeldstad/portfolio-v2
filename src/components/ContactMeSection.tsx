@@ -42,10 +42,10 @@ export default function ContactMeSection({}: Props) {
           />
         </motion.div>
         <motion.div style={{ opacity }} className="mt-20 flex h-full w-full flex-col items-center gap-6">
-          <h2 className="relative max-w-4xl text-center text-4xl font-bold capitalize [text-warp:balance] md:text-4xl">
-            Let&apos;s grab <br />a cup of coffee
+          <h2 className="relative max-w-lg text-center text-4xl font-bold capitalize [text-warp:balance] [text-wrap:balance] md:text-4xl">
+            Let&apos;s grab a cup of coffee
           </h2>
-          <h2 className="relative max-w-lg text-center text-xl capitalize md:text-gray-400">
+          <h2 className="relative max-w-lg text-center text-xl capitalize [text-wrap:balance] md:text-gray-400">
             The Best Things in Life are Free, Like This Coffee for Our Meeting
           </h2>
         </motion.div>
@@ -63,10 +63,8 @@ export default function ContactMeSection({}: Props) {
           className="pointer-events-none fixed inset-0 z-0 h-full w-screen bg-[radial-gradient(at_bottom_right,_#B12E82_0%,_transparent_50%)]"
         />
         <div className="flex flex-col gap-2">
-          <h4 className="relative text-4xl font-bold">
-            Let&apos;s talk about <br /> your next project.
-          </h4>
-          <p className="text-gray-400">
+          <h4 className="relative text-4xl font-bold [text-wrap:balance]">Let&apos;s talk about your next project.</h4>
+          <p className="text-gray-400 [text-wrap:balance]">
             I would love to hear from you if you are intrested in a creative and design focused developer
           </p>
         </div>
@@ -75,8 +73,8 @@ export default function ContactMeSection({}: Props) {
             href="mailto: mats.fjeldstad@outlook.com?subject=Lets have a chat, Mats"
             className="flex items-center gap-2 border-b"
           >
-            <EmailIcon fill="white" className="w-4" />
-            <div className=" ">Send me an E-mail at mats.fjeldstad@outlook.com</div>
+            <EmailIcon fill="white" className="h-4 w-4" />
+            <div className=" w-fit">Send an Email</div>
           </a>
           <p>or</p>
           <a
@@ -85,19 +83,19 @@ export default function ContactMeSection({}: Props) {
             className="flex items-center gap-2 border-b"
           >
             <LinkedIn fill="white" className="h-4 w-4" />
-            <a className=" ">Check me out on LinkedIn</a>
+            <div className=" ">Check me out on LinkedIn</div>
           </a>
         </div>
         <div className=" flex flex-col items-center justify-start gap-6">
-          <div className="flex items-center gap-2 border-b">
+          <a href="https://github.com/Matsfjeldstad" className="flex w-fit items-center gap-2 border-b">
             <Github fill="white" className="h-4 w-4" />
-            <a className=" "> Github</a>
-          </div>
-          {/* <a href="/CV-Mats-Fjeldstad.pdf" download>
+            <div className=" "> Github</div>
+          </a>
+          <a href="/CV-Mats-Fjeldstad.pdf" download>
             <button className=" cursor-pointer rounded border px-4 py-2 duration-150 hover:bg-white/10">
               Download CV
             </button>
-          </a> */}
+          </a>
         </div>
       </div>
     </div>

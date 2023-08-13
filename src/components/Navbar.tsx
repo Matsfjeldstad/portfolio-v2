@@ -75,7 +75,7 @@ function NavLinks({ navIsOpen, setNavIsOpen }: Props) {
                 setNavIsOpen(!navIsOpen);
                 scrollToId(link.scrollId);
               }}
-              className="text-4xl font-black uppercase text-gray-200 duration-150 hover:scale-105 hover:text-pink-500 sm:text-6xl md:text-7xl"
+              className="cursor-pointer text-4xl font-black uppercase text-gray-200 duration-150 hover:scale-105 hover:text-pink-500 sm:text-6xl md:text-7xl"
             >
               {link.name}
             </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
   }, [navIsOpen, setNavColorBasedOnCondition, navColor]);
 
   return (
-    <div className="fixed left-0 top-0 z-10 w-full ">
+    <div className="fixed left-0 top-0 z-50 w-full ">
       <motion.header
         initial={{
           y: -50,
