@@ -25,11 +25,11 @@ export default function WorkSection({}: Props) {
       id: 'ai-email-responder',
       card: EmailResponder,
     },
-    {
-      title: 'ExtraHex.com',
-      id: 'extrahex',
-      card: ExtraHex,
-    },
+    // {
+    //   title: 'ExtraHex.com',
+    //   id: 'extrahex',
+    //   card: ExtraHex,
+    // },
     {
       title: 'Holidaze',
       id: 'holidaze',
