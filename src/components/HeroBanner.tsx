@@ -80,7 +80,7 @@ export default function HeroBanner({}: Props) {
         >
           {/* <Link href="/#projects" className="flex items-center justify-center"> */}
           <div className="w-fit text-center text-lg font-bold text-gray-200">View my work</div>
-          <ArrowDown className="h-5 w-5 fill-gray-200" />
+          <ArrowDown className="h-5 w-5 stroke-gray-200" />
           {/* </Link> */}
         </motion.div>
       </motion.div>

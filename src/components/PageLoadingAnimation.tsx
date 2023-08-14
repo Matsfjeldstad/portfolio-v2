@@ -62,7 +62,7 @@ export default function PageLoadingAnimation({ setLoading }: Props) {
       onAnimationComplete={() => setLoading(false)}
       animate="visible"
     >
-      <motion.h1 variants={childObject} className="text-5xl font-bold gap-2 ">
+      <motion.h1 variants={childObject} className="text-5xl font-bold gap-2 text-gray-100 ">
         Hello
       </motion.h1>
     </motion.div>
