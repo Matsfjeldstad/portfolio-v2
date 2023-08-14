@@ -31,20 +31,12 @@ export default function AboutMeSection({}: Props) {
   const imageOpacity = useTransform(textSectionProgress, [0.1, 0.2, 0.8, 0.95], [0, 1, 1, 0]);
 
   return (
-    <motion.section id="about" style={{ opacity }} ref={aboutMeRef} className="relative h-full w-full">
+    <motion.section id="about" style={{ opacity }} ref={aboutMeRef} className="relative h-full w-full text-gray-100">
       <motion.div
         style={{ opacity: gradientOpacity }}
         className="pointer-events-none fixed inset-0 z-0 h-full w-full bg-[radial-gradient(circle_farthest-side_at_100px_300px,_#B12E82_0%,_transparent_40%)]"
       />
       <div className="relative z-10 mx-auto max-w-4xl p-6">
-        {/* <div className="h-[150vh]">
-          <motion.h1
-            style={{ opacity: headingOpacity }}
-            className="sticky top-0 flex h-screen items-center text-center text-6xl font-bold uppercase text-gray-200"
-          >
-            So, who am I?
-          </motion.h1>
-        </div> */}
         <div className="sticky left-0 top-0 h-[150px] w-full items-center overflow-hidden sm:flex"></div>
         <motion.div ref={textRef} className="flex h-full w-full items-start gap-20">
           <motion.div className="w-full py-[20vh] md:py-[50vh]">

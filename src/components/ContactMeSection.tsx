@@ -29,7 +29,7 @@ export default function ContactMeSection({}: Props) {
     <div
       id="contact"
       ref={contactMeRef}
-      className="mt-10 min-h-screen snap-start scroll-mt-[500px] overflow-hidden p-4"
+      className="mt-10 min-h-screen snap-start scroll-mt-[500px] overflow-hidden p-4 text-gray-100"
     >
       <div className="relative h-[60vh]">
         <motion.div style={{ rotateZ: imageRotation, x }} className="w-full origin-bottom-right">

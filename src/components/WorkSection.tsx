@@ -48,7 +48,7 @@ export default function WorkSection({}: Props) {
   ];
 
   return (
-    <motion.section style={{ opacity }} ref={workSectionRef} className="mx-auto h-full max-w-4xl">
+    <motion.section style={{ opacity }} ref={workSectionRef} className="mx-auto h-full max-w-4xl text-gray-100">
       <motion.div className="mt-20 text-center text-4xl font-black uppercase">My Work</motion.div>
       <motion.div id="projects" className="flex w-full items-start gap-20 sm:p-4">
         <div className="invisible w-full py-[50vh] sm:visible">
