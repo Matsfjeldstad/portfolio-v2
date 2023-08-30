@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import { ArrowDown } from "@/assets/Icons";
-import { idText } from "typescript";
 
 type Props = {};
+
 
 export default function HeroBanner({}: Props) {
     const heroRef = useRef<HTMLDivElement>(null);
@@ -33,9 +32,9 @@ export default function HeroBanner({}: Props) {
             window.removeEventListener("mousemove", updateMouseMove);
         };
     }, []);
-    const projectId = document.getElementById("projects");
 
     const scrollToProjects = () => {
+        const projectId = document.getElementById("projects");
         if (!projectId) return;
         projectId.scrollIntoView({ behavior: "smooth" });
     };
