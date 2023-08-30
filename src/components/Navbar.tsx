@@ -4,13 +4,12 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useNavColorStore } from "./ProjectSection/Store";
 import classNames from "classnames";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 type Navlinks = {
     setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
     navIsOpen: boolean;
-    pathname: string
 };
 type Hamburger = {
     setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
