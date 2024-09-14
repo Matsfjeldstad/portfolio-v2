@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavColorStore } from "./ProjectSection/Store";
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
-import { AppRouterInstance } from "next/dist/shared/lib/app-router-context";
 
 type Navlinks = {
     setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,7 +16,11 @@ type Hamburger = {
     navColor: string;
 };
 
-export function HamburgerMenu({ setNavIsOpen, navIsOpen, navColor }: Hamburger) {
+export function HamburgerMenu({
+    setNavIsOpen,
+    navIsOpen,
+    navColor,
+}: Hamburger) {
     return (
         <motion.div
             onClick={() => setNavIsOpen(!navIsOpen)}
@@ -49,7 +52,7 @@ const navLinks = [
     { name: "Contact me", href: "/#contact", scrollId: "contact" },
 ];
 
-const scrollToId = (id: string, router: AppRouterInstance) => {
+const scrollToId = (id: string, router: any) => {
     const element = document.getElementById(id);
 
     if (element) {
